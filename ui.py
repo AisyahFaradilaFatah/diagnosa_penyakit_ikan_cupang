@@ -4,7 +4,7 @@ from inference_engine import MesinInferensi
 
 
 class AntarmukaDiagnosaCupang:
-    """Antarmuka pengguna untuk sistem pakar diagnosa penyakit ikan cupang."""
+
 
     def __init__(self, root):
         self.root = root
@@ -23,7 +23,7 @@ class AntarmukaDiagnosaCupang:
         self.gejala_terpilih = {}
         self.tampilkan_halaman_diagnosa()
 
-    # ================= HALAMAN DIAGNOSA =================
+    #  HALAMAN DIAGNOSA
     def tampilkan_halaman_diagnosa(self):
         for widget in self.root.winfo_children():
             widget.destroy()
@@ -103,7 +103,7 @@ class AntarmukaDiagnosaCupang:
                   cursor="hand2", relief=tk.FLAT, borderwidth=0,
                   command=self._proses_diagnosa).pack()
 
-    # ================= HALAMAN HASIL =================
+    # HALAMAN HASIL
     def _proses_diagnosa(self):
         gejala_pengguna = {k: v.get() for k, v in self.gejala_terpilih.items() if v.get() > 0}
         if not gejala_pengguna:
